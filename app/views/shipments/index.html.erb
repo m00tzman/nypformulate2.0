@@ -1,4 +1,17 @@
-<% @shipments.each do |shipment| %>
-	<h2><%= link_to shipment.trucker, shipment_path(shipment) %></h2>
-	<%= link_to "Delete", shipment_path(shipment), method: :delete, data: {confirm: "Are you sure you want to delete this student?"} %>
-<% end %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NYP Formulate</title>
+</head>
+<body>
+	
+	<h1><%= link_to "Add New Shipment", new_shipment_path %></h1><br><br>
+
+	<% @shipments.each do |shipment| %>
+		<h2><%= link_to shipment.trucker, shipment_path(shipment) %></h2>
+		<%= link_to "Delete", shipment_path(shipment), method: :delete, data: {confirm: "Are you sure you want to delete this student?"} %>
+	<% end %>
+	
+</body>
+</html>
