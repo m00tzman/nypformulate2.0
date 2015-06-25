@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  [date: 
+  seal: 
+  truck: 
+  company: 
+  truckernumber: 
+  units: 
+  weight: 
+  deliverydate: 
+
+two:
+  [date: 
+  seal: 
+  truck: 
+  company: 
+  truckernumber: 
+  units: 
+  weight: 
+  deliverydate: 

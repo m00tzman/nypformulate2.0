@@ -1,0 +1,4 @@
+<% @shipments.each do |shipment| %>
+	<h2><%= link_to shipment.trucker, shipment_path(shipment) %></h2>
+	<%= link_to "Delete", shipment_path(shipment), method: :delete, data: {confirm: "Are you sure you want to delete this student?"} %>
+<% end %>

@@ -1,0 +1,20 @@
+<div class = "col-md-10" id ="window">
+<%= simple_form_for @shipment do |f| %><%= f.input :date, class: 'form-control' %><br>
+<%= f.input :day, class: 'form-control' %><br>
+<%= f.input :truckNumber, class: 'form-control', :label => "Truck of the Day" %><br>
+<%= f.input :seal, class: 'form-control' %><br>
+<%= f.input :trucker, class: 'form-control', :label => "Carrier" %><br>
+<%= f.input :truckernumber, class: 'form-control', :label => "Driver + Phone Number" %><br>
+<%= f.input :deliverydate, class: 'form-control', :label => "Delivery Date" %><br>
+  <h3>Skids</h3>
+     <div id = "skids">
+        <%= f.simple_fields_for(:skids) do |skid| %>
+            <%= render 'skid_fields', :f => skid %>
+        <% end %>
+        <div class ="links">
+            <%= link_to_add_association 'Add Skid', f, :skids %>
+        </div>
+     </div>
+     <%= f.submit %>
+  <% end %>
+</div>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            #header{
+                text-align: center;
+                font-size: 20px;
+            }
+
+            #nyp-address{
+                float: left;
+            }
+
+            #date{
+                float: right;
+            }
+
+            #deliver-header{
+                clear: both;
+                text-align: center;
+                font-size: 20px;
+            }
+
+            #hubbard-address{
+                float: left;
+            }
+
+            #date-info{
+                float: right;
+                font-size: 20px;
+            }
+
+
+
+            table, th, td{
+                border: 1px solid black;
+            }
+
+            #shipping-table{
+                clear: both;
+                width: 100%;
+
+            }
+
+            #pt-one td{
+                padding-left: 65px;
+                padding-right: 65px;
+            }
+
+            #pt-two td{
+                padding-left:11px;
+                padding-right: 11px
+            }
+
+            #star{
+                font-size: 8px;
+            }
+
+            #comments {
+                float: left;
+                font-size: 16pt;
+            }
+
+            #reciever{
+                float: right;
+                font-size: 11pt;
+            }
+
+            #name-date-time{
+                text-align: right;
+            }
+
+            #thingy{
+                clear: both;
+                float:right;
+            }
+
+            .fp6px{
+                font-size: 6px;
+            }
+
+            .fp8px{
+                font-size: 8px;
+            }
+
+            #fineprint-area{
+                clear: both;
+            }
+
+            #fineprint-area #caveat{
+                width: 50%;
+            }
+
+            #fineprint-area #sig-area{
+                font-size: 8pt;
+            }
+
+            #signature #shipper-sig{
+                width: 50%;
+            }
+
+            #signature #sig-date{
+                margin-right: 70px;
+                float:right;
+            }
+
+            #signature #ship-sig-fp{
+                margin-bottom: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "header">
+            <b><u>ORIGINAL BILL OF LADING - NOT NEGOTIABLE</u><b>
+        </div>
+        <br>
+        <div id = "nyp-address">
+            <b>NEW YORK PACKAGING</b>
+            <br>
+            <b>135 FULTON AVENUE</b>
+            <br>
+            <b>GARDEN CITY PARK, NY 11040</b>
+            <br>
+            <b>TEL: (516) 746-0600</b>
+            <br>
+            <b>FAX: (516) 746-0661</b>
+        </div>
+
+        <div id = "date">
+            <%= @shipment.date %>
+        </div>
+
+        <div id = "deliver-header">
+            <b><u>DELIVERED</u></b>
+        </div>
+
+        <div id = "hubbard-address">
+            <b><u>Consignee/Ship to:</u></b>
+            <br>
+            <b>NEW YORK PACKAGING</b>
+            <br>
+            <b>REDI BAG USA LLC</b>
+            <br>
+            <b>734 MYRON STREET</b>
+            <br>
+            <b>HUBBARD, OH 44425</b>
+            <br>
+            <b>330-568-4200</b>
+        </div>
+
+        <div id = "date-info">
+            <b><%= @shipment.day %></b>
+            <br>
+            <b>TRUCK</b>
+            <br>
+            <b>NEED POD</b>
+        </div>
+
+        <center>
+            <div id = "shipping-table">
+                <table id="pt-one">
+                    <tr>
+                        <td>
+                            <center>Ship Date</center>
+                        </td>
+                        <td>
+                            <center>Carrier</center>
+                        </td>
+                        <td>
+                            <center>Customer PO No.</center>
+                        </td>
+                        <td>
+                            <center>SO no.</center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center><%= @shipment.date %></center>
+                        </td>
+                        <td>
+                            <center>SEAL # <%= @shipment.seal %></center>
+                        </td>
+                        <td>
+                            <center>NYP</center>
+                        </td>
+                        <td>
+                            <center>N/A</center>
+                        </td>
+                    </tr>
+                </table>
+                <table id="pt-two">
+                    <tr>
+                        <td>
+                            <center>Item</center>
+                        </td>
+                        <td>
+                            <center>HM*</center>
+                        </td>
+                        <td>
+                            <center>Freight Class</center>
+                        </td>
+                        <td>
+                            <center><u>Description</u></center><br>
+                            <center><%= @shipment.trucker %></center><br>
+                            <center><%= @shipment.truckernumber %></center><br>
+                        </td>
+                        <td>
+                            <center>Packaging</center>
+                        </td>
+                        <td>
+                            <center>Units</center>
+                        </td>
+                        <td>
+                            <center>Weight</center>
+                        </td>
+                        <td>
+                            Cube
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>001</center>
+                        </td>
+                        <td>
+                            <br>
+                        </td>
+                        <td>
+                            <center>156830</center>
+                        </td>
+                        <td>
+                            <center>NYP II LLC</center>
+                        </td>
+                        <td>
+                            <br>
+                        </td>
+                        <td>
+                            <center>XXXXXX</center>
+                        </td>
+                        <td>
+                            <center>XXXXX</center>
+                        </td>
+                        <td>
+                            <br>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </center>
+
+        <div id="star">
+            *Items are marked "X" to designate Hazardous Materials as defined in DOT regulations.
+        </div>
+
+        <div id="comments">
+            <b><u>COMMENTS</u><b>
+            <br>
+            <br>
+            <b>XXXX CASES, XX SKIDS</b>
+            <br>
+            <b>DELIVERY DATE <%= @shipment.deliverydate %></b>
+        </div>
+
+        <div id="reciever">
+            <span id="rec-hours">RECEIVING HOURS 8:30AM TO 4:30PM ONLY MON-FRIDAY<span>
+            <br>
+            <br>
+            <div id="name-date-time">
+                NAME: ___________________________
+                <br>
+                <br>
+                DATE: ________  TIME: ___________
+            </div>
+        </div>
+        <div id="thingy">
+            <div class="header">
+            NMFC# 156830, SUB 0 CLASS 55 DENSITY 35LB PCF
+            </div>
+            <div class="fp6px">
+                TO: FREIGHT CARRIERS
+                <br>
+                BILL OF LADING IS ACCEPTED AS PIECES, NOT PALLETS, WHEN TRANSPOSING BILL OF LADING MUST READ PIECES & NOT PALLETS.
+                <br>
+                CUSTOMER MUST SIGN FOR # OF PIECES.
+                <br>
+                FREIGHT CARRIERS MUST SIGN BELOW ACKNOWLEDGING SIGNATURE FOR # OF PIECES.
+                <br>
+                <br>
+            </div>
+                FREIGHT CARRIER'S SIGNATURE:_____________________
+                <br>
+                <br>
+                <br>
+        </div>
+        <div id="fineprint-area">
+            <table class="fp8px">
+                <tr>
+                    <td id="caveat">
+                        RECEIVED, subject to the classifications and tariffs in effect on the date of the issue of the Bill of Lading, the property described above, in apparent good order, except as noted (contents and condition of contents of packages unknown), marked, consigned, and destined as indicated below, which said carrier (the word carrier being understood throughout this contract as meaning any person or corporation in possession of the property under the contract) agrees to carry to its usual place of delivery at said destination, if on its route, otherwise to deliver to route to destination, and as to each party at anytime interested in all or any of said of Lading set forth (1) in Uniform Freight Classifications n effect on the date hereof, if this is a rail or rail-water shipment, or (2) the property, that every services to be performed hereunder shall be subject to all the terms and conditions of the Uniform Domestic Straight Bill applicable motor carrier classification or tariff if this is a motor carrier shipment. SHIPPER hereby certifies that he is familiar with all the terms and conditions of the said bill of lading, including those on the back thereof, set forth in the classification or tariff which governs the transportation of this shipment, and the said terms and conditions are hereby agreed to by the shipper and accepted for himself and his ASSIGNS.
+                    </td>
+                    <td id="sig-area">
+                        <center>
+                            <b>FREIGHT COLLECT SHIPMENTS.<b>
+                            <br>
+                            <br>
+                            If this shipment is to be delivered to the consignee without recourse
+                            <br>
+                            on the consignor, the consignor shall sign the following statement:
+                            <br>
+                            The carrier shall not make delivery of this shipment without payment of freight and all other lawful charges.
+                            <br>
+                            <br>
+                            __________________________________________________
+                            <br>
+                            (Signature of Cosigner)
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="signature">
+            <table>
+                <tr>
+                    <td id="shipper-sig">
+                        <p class="fp8px">
+                            This is to certify that the above name materials are properly classified, described, packaged, marked and labeled, and are in proper condition for transportation according to the applicable regulations of the DOT.
+                        </p>
+                        <br>
+                        SHIPPER SIGNATURE:
+                        <span id="sig-date">DATE:</span>
+                        <br>
+                        <br>
+                        <br>
+                    </td>
+                    <td>
+                        <p class="fp8px">
+                            Carrier acknowledges receipt of packages and required placards. Carrier certifies emergency response information was made available and/or carrier has the DOT emergency response guide book or equivalent document in the vehicle.
+                        </p>
+                        <br>
+                        DRIVER SIGNATURE:
+                        <span id="sig-date">DATE:</span>
+                        <br>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
+

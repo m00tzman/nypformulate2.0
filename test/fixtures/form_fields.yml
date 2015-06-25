@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  forms_id: 1
+  fields_id: 1
+
+two:
+  forms_id: 1
+  fields_id: 1
