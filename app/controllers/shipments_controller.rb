@@ -7,15 +7,18 @@ class ShipmentsController < ApplicationController
 	def show
 		@shipment = Shipment.find_by_id(params[:id])
 		@skids = @shipment.skids
+		@form = Form.find_by_id(params[:idr])
 	end
 
 	def new
 		@shipment = Shipment.new
 		@shipment.skids.build
+		@form = Form.new
 	end
 
 	def create
 		@shipment = Shipment.new(params[:shipment])
+		@form = Form.new(params[:form])
 
 		if @shipment.save
 			redirect_to shipment_path(@shipment)
