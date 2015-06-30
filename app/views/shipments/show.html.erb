@@ -5,6 +5,7 @@
 
             #bill-of-lading{
                 display: none;
+                font-size: 12pt;
             }
             #header{
                 text-align: center;
@@ -407,6 +408,11 @@
                     </tr>
                 </table>
             </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div id="show-info">Display Packing List</div>
         </div>
 
         <script>
@@ -414,6 +420,12 @@
                 $('#show-bill').click(function(){
                     $("#shipping-info").hide(function(){
                         $("#bill-of-lading").show()
+                    });
+                });
+
+                $('#show-info').click(function(){
+                    $('#bill-of-lading').hide(function(){
+                        $("#shipping-info").show()
                     });
                 });
             });
