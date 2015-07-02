@@ -151,6 +151,7 @@
                             <th>PO #</th>
                             <th>Cases</th>
                             <th>Weight</th>
+                            <th>Breakdown</th>
                         </thread>
                         <tbody>
                             <% for skid in @shipment.skids %>
@@ -160,6 +161,7 @@
                                     <th> <%= skid.po %> </th>
                                     <th> <%= skid.cases %> </th>
                                     <th> <%= skid.weight %> </th>
+                                    <th> <%= skid.breakdown %> </th>
                                 </tr>
                             <% end %>
                         </tbody>

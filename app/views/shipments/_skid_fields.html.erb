@@ -20,8 +20,12 @@
 			<%= f.input :weight, class: 'form-control' %>
 		</div>
 
+		<div class = "col-md-2">
+			<%= f.input :breakdown, class: 'form-control' %>
+		</div>
+
 		<div class = "col-md-1">
-			<%= link_to_remove_association "Remove", f %>
+			<button class="remove-button"><%= link_to_remove_association "Remove", f %></button>
 		</div>
 		
 	</div>
