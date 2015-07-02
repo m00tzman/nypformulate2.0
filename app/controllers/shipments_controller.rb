@@ -8,6 +8,7 @@ class ShipmentsController < ApplicationController
 		@shipment = Shipment.find_by_id(params[:id])
 		@skids = @shipment.skids
 		@form = Form.find_by_id(params[:idr])
+		@total_cases = @skids.sum(:cases)
 	end
 
 	def new
